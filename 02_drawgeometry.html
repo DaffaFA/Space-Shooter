@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #canvas {
+            border: 1px solid #000;
+            width: 960px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas">Sorry Your Browserser not support canvas element</canvas>    
+    <script>
+        window.onload = init()
+
+        function init() {
+            setCanvas();
+            drawGeometry();
+        }
+
+        function setCanvas() {
+            canvas = document.getElementById('canvas');
+            cw = canvas.width = 960;
+            ch = canvas.height = 600;
+            
+            pen = canvas.getContext('2d');
+
+        }
+
+        function drawGeometry() {
+            pen.beginPath();
+            pen.rect(10, 10, 100, 100);
+            pen.fill();
+
+            pen.beginPath();
+            pen.rect(120, 10, 100, 100);
+            pen.stroke();
+
+            pen.beginPath();
+            pen.fillStyle = 'red';
+            pen.rect(230, 10, 100, 100);
+            pen.fill();
+
+            pen.beginPath();
+            pen.fillStyle = 'blue';
+            pen.moveTo(10, 150);
+            pen.lineTo(150, 150);
+            pen.lineTo(75, 200);
+            pen.closePath();
+            pen.fill();
+        }
+    </script>
+</body>
+</html>

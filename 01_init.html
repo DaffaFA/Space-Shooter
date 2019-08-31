@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #canvas {
+            border: 1px solid #000;
+            width: 960px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas">Sorry Your Browserser not support canvas element</canvas>    
+    <script>
+        window.onload = init()
+
+        function init() {
+            setCanvas();
+        }
+
+        function setCanvas() {
+            var canvas = document.getElementById('canvas');
+            var pen = canvas.getContext('2d');
+
+            console.log(pen);
+        }
+    </script>
+</body>
+</html>
